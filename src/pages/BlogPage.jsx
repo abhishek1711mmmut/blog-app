@@ -34,7 +34,8 @@ const BlogPage = () => {
     if(blogId){
       fetchRelatedBlogs();
     }
-  },[location.pathname]);
+  },// eslint-disable-next-line
+  [location.pathname]);
 
   return (
     <div className='max-w-[750px] mx-auto mt-[80px]'>

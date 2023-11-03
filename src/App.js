@@ -11,6 +11,7 @@ import CategoryPage from "./pages/CategoryPage";
 export default function App() {
   const { fetchBlogPosts } = useContext(AppContext);
 
+  // eslint-disable-next-line
   const [searchParams, setSearchParams]=useSearchParams();
   const location=useLocation();
 
@@ -30,11 +31,12 @@ export default function App() {
     else{
       fetchBlogPosts(Number(page));
     }
-  }, [location.pathname, location.search]);
+  }, // eslint-disable-next-line
+  [location.pathname, location.search]);
 
   return (
     <Routes>
-      <Route path="/" element={<Home/>}/>
+      <Route path="/blog-app" element={<Home/>}/>
       <Route path="/blog/:blogId" element={<BlogPage/>}/>
       <Route path="/tags/:tag" element={<TagPage/>}/>
       <Route path="/categories/:category" element={<CategoryPage/>}/>
